@@ -1,29 +1,24 @@
 # Heart-Attack-Analysis-Prediction
 
-<a id=1></a>
+<a id=0.1></a>
 1. [Introduction](#1) 
     - 1.1 [About Data](#2)
     - 1.2 [About the Problem](#3)
-2. [Preparation](#4)
-    - 2.1 [Packages](#5)
-    - 2.2 [Data](#6)
-    - 2.3 [Understanding Data](#7)
-3. [Exploratory Data Analysis](#8)
-    - 3.1 [Univariate Analysis](#9)
-    - 3.2 [Bivariate Analysis](#10)
-4. [Data Preprocessing](#11)
-    - 4.1 [Conclusions from the EDA](#12)
-    - 4.2 [Packages](#13)
-    - 4.3 [Making features model ready](#14)
-5. [Modeling](#15)
-    - 5.1 [Linear Classifiers](#16)
-    - 5.2 [Tree Models](#17)
+2. [Data Preparation](#4)
+3. [Exploratory Data Analysis](#5)
+4. [Data Preprocessing](#6)
+5. [Modeling](#7)
+    - 5.1 [Linear Classifiers](#8)
+    - 5.2 [Tree Models](#9)
     
 
-### 1. Introduction <a id=1></a>
-[back to top](#1)
+## 1. Introduction <a id=1></a>
+[back to top](#0.1)
 
-#### 1.1 About Data <a id=2></a>
+### 1.1 About Data <a id=2></a>
+
+You can download the dataset -------> [Link](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
+
 `age` - Age of the patient
 
 `sex` - Sex of the patient
@@ -52,5 +47,16 @@
 
 `output` - Target variable
 
-#### 1.2 About the Problem <a id=3></a>
+### 1.2 About the Problem <a id=3></a>
 To perform EDA and predict if a person is prone to a heart attack or not.
+
+## 2. Data Preparation <a id=4></a>
+[back to top](#0.1)
+
+- Checking for any null values
+- Checking any missing data
+- Checking the number of unique values in each column
+- Separating the columns in categorical and continuous
+
+### 3. Exploratory Data Analysis <a id=5></a>
+[back to top](#0.1)
