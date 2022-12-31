@@ -2,21 +2,21 @@
 
 <a id=0.1></a>
 1. [Introduction](#1) 
-    - 1.1 [About Data](#2)
-    - 1.2 [About the Problem](#3)
-2. [Data Preparation](#4)
-3. [Exploratory Data Analysis](#5)
-    - 3.1 [Conclusions from the EDA](#6)
-5. [Data Preprocessing](#7)
-6. [Modeling](#8)
-    - 5.1 [Linear Classifiers](#8.1)
-    - 5.2 [Tree Models](#8.2)
+    - 1.1 [About Data](#1.1)
+    - 1.2 [About the Problem](#1.2)
+2. [Data Preparation](#2)
+3. [Exploratory Data Analysis](#3)
+    - 3.1 [Conclusions from the EDA](#3.1)
+4. [Data Preprocessing](#4)
+5. [Modeling](#5)
+    - 5.1 [Linear Classifiers](#5.1)
+    - 5.2 [Tree Models](#5.2)
     
 
 ## 1. Introduction <a id=1></a>
 [back to top](#0.1)
 
-### 1.1 About Data <a id=2></a>
+### 1.1 About Data <a id=1.1></a>
 
 You can download the dataset -------> [Link](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
@@ -48,10 +48,10 @@ You can download the dataset -------> [Link](https://www.kaggle.com/datasets/ras
 
 `output` - Target variable
 
-### 1.2 About the Problem <a id=3></a>
-To perform EDA and predict if a person is prone to a heart attack or not.
+### 1.2 About the Problem <a id=1.2></a>
+To perform EDA and predict if a person is prone to a heart attack or not using linear and tree based models
 
-## 2. Data Preparation <a id=4></a>
+## 2. Data Preparation <a id=2></a>
 [back to top](#0.1)
 
 - Checking for any null values
@@ -59,11 +59,10 @@ To perform EDA and predict if a person is prone to a heart attack or not.
 - Checking the number of unique values in each column
 - Separating the columns in categorical and continuous
 
-## 3. Exploratory Data Analysis <a id=5></a>
+## 3. Exploratory Data Analysis <a id=3></a>
 [back to top](#0.1)
 
-### 3.1 Conclusions from the EDA <a id=6></a>
-[back to top](#0.1)
+### 3.1 Conclusions from the EDA <a id=3.1></a>
 
 1. There are no NaN values in the data.
 2. There are certain outliers in all the continuous features.
@@ -80,5 +79,30 @@ To perform EDA and predict if a person is prone to a heart attack or not.
     - People with `thall` = 2 have much higher chance of heart attack.
     - People with no exercise induced angina, that is with `exng` = 0 have higher chance of heart attack.
 
+## 4. Data Preprocessing <a id=4></a>
+[back to top](#0.1)
 
-#### 5.2 Tree Models <a id=17></a>
+- Feature Scaling is required
+
+        ### define the columns to be encoded and scaled
+        cat_cols = ['sex','exng','caa','cp','fbs','restecg','slp','thall']
+        con_cols = ["age","trtbps","chol","thalachh","oldpeak"]
+
+        ### encoding the categorical columns
+        df1 = pd.get_dummies(df1, columns = cat_cols, drop_first = True)
+
+        ### defining the features and target
+        X = df1.drop(['output'],axis=1)
+        y = df1[['output']]
+
+        ### instantiating the scaler
+        scaler = sklearn.preprocessing.RobustScaler()
+
+        ### scaling the continuous featuree
+        X[con_cols] = scaler.fit_transform(X[con_cols])
+
+## 5. Modelling <a id=5></a>
+[back to top](#0.1)
+
+We will use Linear Classifiers - Support Vector Classifier, Logistic Regression as well as Tree Based Models - Decision Tree Classifier
+### 5.2 Tree Models <a id=17></a>
