@@ -105,4 +105,17 @@ To perform EDA and predict if a person is prone to a heart attack or not using l
 [back to top](#0.1)
 
 We will use Linear Classifiers - Support Vector Classifier, Logistic Regression as well as Tree Based Models - Decision Tree Classifier
-### 5.2 Tree Models <a id=17></a>
+
+### 5.1 Linear Models <a id=5.1></a>
+
+- Support Vector Classifier - Also implemented GridSearchCV for hyperparameter tuning ( Accuracy: 0.838435 )
+- Logistic Regression - Implemented LR to check the probabilities. Also used ROC curve to check for TPR and FPR ( Accuracy: 0.901639 )
+
+### 5.2 Tree Models <a id=5.2></a>
+
+- Decision Tree Classifier - ( Accuracy: 0.786885 )
+- Random Forest Classifier - ( Accuracy: 0.786885 )
+- Gradient Boosting Classifier - without tuning - ( Accuracy: 0.868852 )
+
+
+## Please check the .ipynb file for code 
